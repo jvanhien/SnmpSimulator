@@ -1,0 +1,22 @@
+
+. List all TCP port are openning
+netstat -n
+
+Folder:
+C:\snmpsim-master\build\scripts-3.6
+
+
+
+mib2dev.py --mib-module=C:\Working\Document\MIBs\Eltek\Test\EltekEnexusPowersystem_branch10.mib
+
+
+--logging-method=stdout
+
+snmprec.py --agent-udpv4-endpoint=10.20.7.174 --output-file=10.20.7.174.snmprec --variation-module=numeric --variation-module-options=taglist:65,iterations:2,period:15
+snmprec.py --agent-udpv4-endpoint=10.20.7.174 --output-file=10.20.7.174.snmprec --variation-module=numeric --variation-module-options=taglist:65,iterations:2,period:15
+
+
+snmpsimd.py --agent-udpv4-endpoint=127.0.0.1:161 --process-user=simulator --process-group=simulator --daemonize --logging-method=file:snmpsimd.log
+
+. Host simulator on many ports
+> snmpsimd.py --agent-udpv4-endpoint=127.0.0.1:161 --agent-udpv4-endpoint=192.168.189.1:161
